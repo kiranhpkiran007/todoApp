@@ -1,0 +1,46 @@
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+body {
+  background-color: rgb(231, 225, 225);
+}
+table {
+  /* border: 10px inset black; */
+  width: 70%;
+  height: 500px;
+  margin: 70px 50px 50px 190px;
+  border-radius: 10px;
+}
+
+.headRow {
+  background-color: black;
+  padding: 30px;
+  height: 54px;
+  color: blanchedalmond;
+  /* width: 50%; */
+}
+
+.bodyrow {
+  background-color: burlywood;
+  text-align: center;
+  /* justify-content: right; */
+}
+
+.paginationBlock ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  height: 40px;
+  width: 80%;
+}
+.paginationBlock ul a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+}
+.paginationBlock ul a:hover {
+  color: white;
+  background: black;
+}
