@@ -10,6 +10,24 @@ const Home = () => {
   let userPerPage = 10;
   let pageVisited = pageNumber * userPerPage;
 
+  let Prev = () => {
+    if (pageNumber.length > 0) {
+      setPageNumber(pageNumber--);
+    }
+  };
+  let First = () => {
+    setPageNumber(0);
+  };
+  let Last = () => {
+    let pageCount = Math.ceil(state.length / userPerPage);
+    setPageNumber(pageCount - 1);
+  };
+  let Next = () => {
+    if (pageNumber.length < 200) {
+      setPageNumber(pageNumber++);
+    }
+  };
+
   let displayUser = state
     .slice(pageVisited, pageVisited + userPerPage)
     .map(x => (
@@ -35,8 +53,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-  let pageCount = Math.ceil(state.length / userPerPage);
-
   let changePage = ({ selected }) => {
     setPageNumber(selected);
   };
@@ -57,19 +73,23 @@ const Home = () => {
           <tbody>{displayUser}</tbody>
         </table>
       )}
-      <section className="paginationBlock">
+      {/* <section className="paginationBlock">
         <ReactPaginate
           previousLable={"Previous"}
           nextLable={"Next"}
           pageCount={pageCount}
           onPageChange={changePage}
-          containerClass={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          disableClassName={"paginationDisabled"}
-          activeClassName={"paginationActive"}
+          // containerClass={"paginationBttns"}
+          // previousLinkClassName={"previousBttn"}
+          // nextLinkClassName={"nextBttn"}
+          // disableClassName={"paginationDisabled"}
+          // activeClassName={"paginationActive"}
         />
-      </section>
+      </section> */}
+      <button onClick={Prev}>prev</button>
+      <button onClick={First}>first</button>
+      <button onClick={Last}>last</button>
+      <button onClick={Next}>next</button>
     </section>
   );
 };
