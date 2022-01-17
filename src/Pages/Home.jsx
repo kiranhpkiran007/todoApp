@@ -11,9 +11,9 @@ const Home = () => {
   let pageVisited = pageNumber * userPerPage;
 
   let Prev = () => {
-    if (pageNumber.length > 0) {
+    
       setPageNumber(pageNumber--);
-    }
+   
   };
   let First = () => {
     setPageNumber(0);
@@ -23,9 +23,9 @@ const Home = () => {
     setPageNumber(pageCount - 1);
   };
   let Next = () => {
-    if (pageNumber.length < 200) {
+    
       setPageNumber(pageNumber++);
-    }
+   
   };
 
   let displayUser = state
